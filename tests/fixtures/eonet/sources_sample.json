@@ -1,0 +1,31 @@
+{
+  "title": "EONET Event Sources",
+  "description": "List of all the available event sources in the EONET system",
+  "link": "https://eonet.gsfc.nasa.gov/api/v3/sources",
+  "sources": [
+    {
+      "id": "GDACS",
+      "title": "Global Disaster Alert and Coordination System",
+      "source": "http://www.gdacs.org/",
+      "link": "https://eonet.gsfc.nasa.gov/api/v3/events?source=GDACS"
+    },
+    {
+      "id": "IRWIN",
+      "title": "Integrated Reporting of Wildfire Information (IRWIN) Observer",
+      "source": "https://irwin.doi.gov/observer/",
+      "link": "https://eonet.gsfc.nasa.gov/api/v3/events?source=IRWIN"
+    },
+    {
+      "id": "JTWC",
+      "title": "Joint Typhoon Warning Center",
+      "source": "http://www.metoc.navy.mil/jtwc/jtwc.html",
+      "link": "https://eonet.gsfc.nasa.gov/api/v3/events?source=JTWC"
+    },
+    {
+      "id": "NOAA_NHC",
+      "title": "National Hurricane Center",
+      "source": "https://www.nhc.noaa.gov/",
+      "link": "https://eonet.gsfc.nasa.gov/api/v3/events?source=NOAA_NHC"
+    }
+  ]
+}

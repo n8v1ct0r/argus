@@ -1,0 +1,52 @@
+{
+  "name": "argus",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A real-time view of Earth plus an AI analyst whose every sentence links to the raw events behind it.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "packageManager": "pnpm@10.13.1",
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "node scripts/copy-cesium-assets.ts",
+    "predev": "node scripts/copy-cesium-assets.ts",
+    "build": "next build",
+    "postbuild": "node scripts/check-build.ts",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit && tsc --noEmit -p packages/globe",
+    "format": "prettier --check .",
+    "format:write": "prettier --write .",
+    "test": "playwright test --project=unit",
+    "test:e2e": "PW_E2E=1 playwright test --project=e2e",
+    "ingest": "node scripts/ingest.ts",
+    "check:copy": "node scripts/check-copy.ts",
+    "check:stealth": "bash scripts/stealth-scan.sh",
+    "check:indexes": "node scripts/check-indexes.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.128.0",
+    "@argus/globe": "workspace:*",
+    "@libsql/client": "0.18.0",
+    "cesium": "1.145.0",
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "satellite.js": "7.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.6",
+    "prettier": "3.9.9",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3"
+  }
+}

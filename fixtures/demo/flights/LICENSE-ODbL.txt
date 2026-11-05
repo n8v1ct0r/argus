@@ -1,0 +1,12 @@
+The flight data in this directory contains information from ADSB.lol (https://adsb.lol),
+which is made available here under the Open Database License (ODbL) 1.0.
+
+License text: https://opendatacommons.org/licenses/odbl/1-0/
+
+Argus redacted these records before storing them:
+- Each aircraft address is replaced by a keyed digest. The key is never stored.
+- Callsigns and registrations are not stored.
+- Aircraft flagged LADD or PIA are left out.
+
+You may use, share, and adapt this data under the ODbL. If you publicly use an adapted
+version, offer that version under the ODbL too.

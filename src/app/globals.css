@@ -1,0 +1,295 @@
+@import "tailwindcss";
+
+/*
+ * Dark glass console. Night ground, glass panels, one accent.
+ * Scratch = primary ink, Graphite = secondary ink, Pen = the accent (selection, citations,
+ * findings, focus, alerts). Signal is the same accent for detector findings. Varnish marks stale
+ * or failed data. The honesty strip keeps its own LIVE, RECORDED, and DEMO colors.
+ */
+@theme inline {
+  --color-soot: #050607;
+  --color-night: #0b0d10;
+  --color-scratch: #f2f3f5;
+  --color-graphite: #a3a8b0;
+  --color-signal: #ff8a3d;
+  --color-varnish: #e9b44c;
+  --color-pen: #ff8a3d;
+  --color-on-pen: #1a0c03;
+  --color-hair: rgb(255 255 255 / 0.08);
+  --color-hair-strong: rgb(255 255 255 / 0.16);
+  --color-live: #3ddc84;
+  --color-recorded: #f5b83d;
+  --color-demo: #9b8cff;
+
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", system-ui,
+    sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Fixed rem scale: micro 11/14, caption 12/16, small 13/18, body 14/20, reading 15/22,
+     title 17/22, figure 34/36. */
+  --text-micro: 0.6875rem;
+  --text-micro--line-height: 0.875rem;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-small: 0.8125rem;
+  --text-small--line-height: 1.125rem;
+  --text-body: 0.875rem;
+  --text-body--line-height: 1.25rem;
+  --text-reading: 0.9375rem;
+  --text-reading--line-height: 1.375rem;
+  --text-title: 1.0625rem;
+  --text-title--line-height: 1.375rem;
+  --text-figure: 2.125rem;
+  --text-figure--line-height: 2.25rem;
+
+  --radius-sheet: 6px;
+  --radius-glass: 18px;
+  --radius-inset: 10px;
+}
+
+:root {
+  color-scheme: dark;
+  /* Desktop console geometry; the globe box reads these to keep its center in the open area. */
+  --rail-w: 248px;
+  --pad: 12px;
+  --top-h: 52px;
+  --panels-h: 240px;
+  --replay-h: 112px;
+}
+
+/* The root stays at the browser's 16px so rem sizes (and the 32px honesty strip) mean what
+   they say; the body text is 14px. */
+html,
+body {
+  margin: 0;
+  background: var(--color-soot);
+  color: var(--color-scratch);
+  font-family: var(--font-sans);
+}
+body {
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* Browser surfaces carry the palette too. */
+::selection {
+  background: rgb(255 138 61 / 0.32);
+  color: var(--color-scratch);
+}
+* {
+  caret-color: var(--color-pen);
+  scrollbar-color: rgb(255 255 255 / 0.18) transparent;
+  scrollbar-width: thin;
+}
+:focus-visible {
+  outline: 2px solid var(--color-pen);
+  outline-offset: 2px;
+}
+a {
+  color: var(--color-pen);
+  text-underline-offset: 3px;
+}
+input[type="checkbox"] {
+  accent-color: #d9dce1;
+}
+
+/* The glass material: translucent night, blur and saturation from what is behind, a 1px inner
+   highlight on the top edge, and a soft offset shadow. */
+.glass {
+  background: rgb(18 20 24 / 0.62);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  backdrop-filter: blur(22px) saturate(170%);
+  border: 1px solid rgb(255 255 255 / 0.07);
+  border-radius: var(--radius-glass);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.09),
+    0 18px 40px -16px rgb(0 0 0 / 0.75),
+    0 2px 8px rgb(0 0 0 / 0.35);
+}
+/* A recessed well inside a glass panel (charts, inputs). */
+.well {
+  background: rgb(0 0 0 / 0.28);
+  border: 1px solid rgb(255 255 255 / 0.05);
+  border-radius: var(--radius-inset);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.4);
+}
+.panel-title {
+  font-size: var(--text-caption);
+  line-height: var(--text-caption--line-height);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-graphite);
+}
+
+/* Cesium's own credit container sits inside our credits line and inherits its type. */
+.cesium-credit-lightbox-overlay {
+  display: none !important;
+}
+.argus-cesium-credits .cesium-credit-logoContainer img {
+  height: 14px !important;
+  width: auto !important;
+  vertical-align: middle;
+}
+.argus-cesium-credits .cesium-credit-textContainer,
+.argus-cesium-credits .cesium-credit-expand-link {
+  color: var(--color-graphite);
+  font-size: var(--text-micro);
+  line-height: var(--text-micro--line-height);
+}
+.argus-cesium-credits a {
+  color: var(--color-graphite);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* The shared honesty strip (32px, fixed). The app below starts under it and never overlaps it. */
+.honesty-strip {
+  background: #0b0b0c;
+  border-color: rgb(255 255 255 / 0.08);
+  color: rgb(237 237 237 / 0.72);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.honesty-strip-link {
+  color: inherit;
+  text-decoration: none;
+}
+.honesty-strip-link:hover {
+  color: rgb(237 237 237 / 0.95);
+  text-decoration: underline;
+}
+.argus-below-strip {
+  padding-top: 32px;
+  box-sizing: border-box;
+}
+
+/* Cesium positions its credit block absolutely at the bottom of the nearest positioned box.
+   Keep it in the credits line instead. */
+.argus-cesium-credits .cesium-widget-credits,
+.argus-cesium-credits.cesium-widget-credits {
+  position: static !important;
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  text-shadow: none;
+  padding: 0;
+}
+
+/* The globe box. On desktop it sits behind the panels, shifted so its center (where a flight
+   puts the cited events) falls in the open area between the rail and the bottom panels. */
+.argus-globe-box {
+  container-type: size;
+}
+@media (min-width: 761px) {
+  .argus-globe-desk {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: calc(var(--rail-w) / 2 + var(--pad));
+    bottom: calc((var(--panels-h) + var(--replay-h) + 3 * var(--pad)) * 0.5);
+  }
+}
+/* The still of Earth shown while Cesium loads. Cesium's 60 degree field of view spans the longer
+   side of the canvas, so from the start height (21,000 km) the disc is 41.45% of that side. The
+   still is cropped to 1.08 times the disc, which keeps the edge of the atmosphere. */
+.argus-globe-still {
+  left: 50%;
+  top: 50%;
+  width: calc(max(100cqw, 100cqh) * 0.4145 * 1.08);
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+/* A soft night vignette over the globe so glass panels sit on depth, not on a hard edge. */
+.argus-vignette {
+  background:
+    radial-gradient(120% 90% at 50% 45%, transparent 55%, rgb(5 6 7 / 0.7) 100%),
+    linear-gradient(to bottom, rgb(5 6 7 / 0.35), transparent 18%);
+}
+
+/* The focus frame: corner brackets drawn with gradients, neutral ink. */
+.focus-frame {
+  --c: rgb(242 243 245 / 0.75);
+  --l: 22px;
+  background:
+    linear-gradient(var(--c), var(--c)) top left / var(--l) 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) top left / 1px var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / var(--l) 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / 1px var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / var(--l) 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / 1px var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / var(--l) 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / 1px var(--l) no-repeat;
+  transition:
+    width 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    height 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 200ms ease-out;
+}
+
+/* The citations sheet slides in from the right over the globe. */
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+.sheet-in {
+  animation: sheet-in 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* HUD placement: clear of the rail and the bottom panels on desktop. */
+.hud-ladder {
+  left: 12px;
+}
+.hud-tape {
+  bottom: 10px;
+}
+@media (min-width: 761px) {
+  .hud-ladder {
+    left: calc(var(--rail-w) / 2 + 18px);
+  }
+  .hud-tape {
+    bottom: calc((var(--panels-h) + var(--replay-h) + 3 * var(--pad)) * 0.5 + 14px);
+  }
+}
+
+/* Narrow phones: the strip's text fits in full at 360px with tighter tracking and gutters. */
+@media (max-width: 420px) {
+  .honesty-strip {
+    letter-spacing: 0.01em;
+    padding-left: 8px;
+    padding-right: 8px;
+    gap: 8px;
+  }
+}
+
+/* A scrolled-to globe stops below the fixed honesty strip. */
+.argus-globe-box {
+  scroll-margin-top: 42px;
+}

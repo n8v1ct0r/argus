@@ -1,0 +1,293 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1790240400000,
+    "url": "https://example.invalid/all_day.geojson",
+    "title": "Synthetic swarm for worker tests",
+    "status": 200,
+    "api": "1.14.1",
+    "count": 7
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 2.6,
+        "place": "Synthetic test swarm",
+        "time": 1790229600000,
+        "updated": 1790230200000,
+        "tz": null,
+        "url": "https://example.invalid/event/zz70000001",
+        "detail": "https://example.invalid/detail/zz70000001",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 100,
+        "net": "zz",
+        "code": "70000001",
+        "ids": ",zz70000001,",
+        "sources": ",zz,",
+        "types": ",origin,phase-data,",
+        "nst": 20,
+        "dmin": 0.05,
+        "rms": 0.2,
+        "gap": 60,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 2.6 - Synthetic test swarm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.5,
+          35.7,
+          8.1
+        ]
+      },
+      "id": "zz70000001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 3.1,
+        "place": "Synthetic test swarm",
+        "time": 1790230800000,
+        "updated": 1790231400000,
+        "tz": null,
+        "url": "https://example.invalid/event/zz70000002",
+        "detail": "https://example.invalid/detail/zz70000002",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 100,
+        "net": "zz",
+        "code": "70000002",
+        "ids": ",zz70000002,",
+        "sources": ",zz,",
+        "types": ",origin,phase-data,",
+        "nst": 20,
+        "dmin": 0.05,
+        "rms": 0.2,
+        "gap": 60,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 3.1 - Synthetic test swarm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.51,
+          35.71,
+          7.4
+        ]
+      },
+      "id": "zz70000002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 2.1,
+        "place": "Synthetic distant area",
+        "time": 1790231400000,
+        "updated": 1790232000000,
+        "tz": null,
+        "url": "https://example.invalid/event/zz70000006",
+        "detail": "https://example.invalid/detail/zz70000006",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 100,
+        "net": "zz",
+        "code": "70000006",
+        "ids": ",zz70000006,",
+        "sources": ",zz,",
+        "types": ",origin,phase-data,",
+        "nst": 20,
+        "dmin": 0.05,
+        "rms": 0.2,
+        "gap": 60,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 2.1 - Synthetic distant area"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -150.1,
+          61.2,
+          12.3
+        ]
+      },
+      "id": "zz70000006"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 2.2,
+        "place": "Synthetic test swarm",
+        "time": 1790232300000,
+        "updated": 1790232900000,
+        "tz": null,
+        "url": "https://example.invalid/event/zz70000003",
+        "detail": "https://example.invalid/detail/zz70000003",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 100,
+        "net": "zz",
+        "code": "70000003",
+        "ids": ",zz70000003,",
+        "sources": ",zz,",
+        "types": ",origin,phase-data,",
+        "nst": 20,
+        "dmin": 0.05,
+        "rms": 0.2,
+        "gap": 60,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 2.2 - Synthetic test swarm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.49,
+          35.695,
+          9
+        ]
+      },
+      "id": "zz70000003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 2,
+        "place": "Synthetic test swarm",
+        "time": 1790232600000,
+        "updated": 1790233200000,
+        "tz": null,
+        "url": "https://example.invalid/event/zz70000007",
+        "detail": "https://example.invalid/detail/zz70000007",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 100,
+        "net": "zz",
+        "code": "70000007",
+        "ids": ",zz70000007,",
+        "sources": ",zz,",
+        "types": ",origin,phase-data,",
+        "nst": 20,
+        "dmin": 0.05,
+        "rms": 0.2,
+        "gap": 60,
+        "magType": "ml",
+        "type": "quarry blast",
+        "title": "M 2 - Synthetic test swarm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.498,
+          35.702,
+          -0.5
+        ]
+      },
+      "id": "zz70000007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 2.9,
+        "place": "Synthetic test swarm",
+        "time": 1790233800000,
+        "updated": 1790234400000,
+        "tz": null,
+        "url": "https://example.invalid/event/zz70000004",
+        "detail": "https://example.invalid/detail/zz70000004",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 100,
+        "net": "zz",
+        "code": "70000004",
+        "ids": ",zz70000004,",
+        "sources": ",zz,",
+        "types": ",origin,phase-data,",
+        "nst": 20,
+        "dmin": 0.05,
+        "rms": 0.2,
+        "gap": 60,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 2.9 - Synthetic test swarm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.52,
+          35.705,
+          6.8
+        ]
+      },
+      "id": "zz70000004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 3.4,
+        "place": "Synthetic test swarm",
+        "time": 1790236200000,
+        "updated": 1790236800000,
+        "tz": null,
+        "url": "https://example.invalid/event/zz70000005",
+        "detail": "https://example.invalid/detail/zz70000005",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 100,
+        "net": "zz",
+        "code": "70000005",
+        "ids": ",zz70000005,",
+        "sources": ",zz,",
+        "types": ",origin,phase-data,",
+        "nst": 20,
+        "dmin": 0.05,
+        "rms": 0.2,
+        "gap": 60,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 3.4 - Synthetic test swarm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.505,
+          35.72,
+          7.9
+        ]
+      },
+      "id": "zz70000005"
+    }
+  ]
+}

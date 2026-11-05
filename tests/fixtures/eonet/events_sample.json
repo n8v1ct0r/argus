@@ -1,0 +1,416 @@
+{
+  "title": "EONET Events",
+  "description": "Natural events from EONET.",
+  "link": "https://eonet.gsfc.nasa.gov/api/v3/events",
+  "events": [
+    {
+      "id": "EONET_23691",
+      "title": "Flood in South Korea 1104133",
+      "description": null,
+      "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_23691",
+      "closed": "2026-08-30T00:00:00Z",
+      "categories": [
+        {
+          "id": "floods",
+          "title": "Floods"
+        }
+      ],
+      "sources": [
+        {
+          "id": "GDACS",
+          "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1104133"
+        }
+      ],
+      "geometry": [
+        {
+          "magnitudeValue": null,
+          "magnitudeUnit": null,
+          "date": "2026-08-28T20:00:00Z",
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                35.3015591,
+                126.5750861
+              ],
+              [
+                35.3012645,
+                126.575125
+              ],
+              [
+                35.3008544,
+                126.5752453
+              ],
+              [
+                35.3006637,
+                126.5753303
+              ],
+              [
+                35.3005424,
+                126.5754435
+              ],
+              [
+                35.300398,
+                126.5757373
+              ],
+              [
+                35.3007359,
+                126.5766504
+              ],
+              [
+                35.3009064,
+                126.5768486
+              ],
+              [
+                35.3011605,
+                126.5767636
+              ],
+              [
+                35.3014494,
+                126.5766291
+              ],
+              [
+                35.3015591,
+                126.5750861
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EONET_24675",
+      "title": "Flood in Tunisia 1104180",
+      "description": null,
+      "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_24675",
+      "closed": "2026-09-18T00:00:00Z",
+      "categories": [
+        {
+          "id": "floods",
+          "title": "Floods"
+        }
+      ],
+      "sources": [
+        {
+          "id": "GDACS",
+          "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1104180"
+        }
+      ],
+      "geometry": [
+        {
+          "magnitudeValue": null,
+          "magnitudeUnit": null,
+          "date": "2026-09-16T20:00:00Z",
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                34.3373983,
+                8.4051824
+              ],
+              [
+                34.3383173,
+                8.4054437
+              ],
+              [
+                34.3377862,
+                8.4063211
+              ],
+              [
+                34.3381346,
+                8.4070026
+              ],
+              [
+                34.3379802,
+                8.4075691
+              ],
+              [
+                34.3386798,
+                8.4077188
+              ],
+              [
+                34.3388238,
+                8.4074849
+              ],
+              [
+                34.3396579,
+                8.4082262
+              ],
+              [
+                34.3400678,
+                8.4078405
+              ],
+              [
+                34.3403595,
+                8.4081313
+              ],
+              [
+                34.3407719,
+                8.4076316
+              ],
+              [
+                34.3409758,
+                8.406924
+              ],
+              [
+                34.3409565,
+                8.406408
+              ],
+              [
+                34.340464,
+                8.4056473
+              ],
+              [
+                34.3388423,
+                8.4048947
+              ],
+              [
+                34.3386707,
+                8.404841
+              ],
+              [
+                34.3383807,
+                8.4049055
+              ],
+              [
+                34.3374366,
+                8.4046295
+              ],
+              [
+                34.3373983,
+                8.4051824
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EONET_24721",
+      "title": "Hurricane Polo",
+      "description": null,
+      "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_24721",
+      "closed": null,
+      "categories": [
+        {
+          "id": "severeStorms",
+          "title": "Severe Storms"
+        }
+      ],
+      "sources": [
+        {
+          "id": "JTWC",
+          "url": "https://www.metoc.navy.mil/jtwc/products/ep1726.tcw"
+        },
+        {
+          "id": "NOAA_NHC",
+          "url": "https://www.nhc.noaa.gov/archive/2026/POLO.shtml"
+        }
+      ],
+      "geometry": [
+        {
+          "magnitudeValue": 35,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-21T00:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -104.8,
+            15.1
+          ]
+        },
+        {
+          "magnitudeValue": 40,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-21T06:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -104.1,
+            15.5
+          ]
+        },
+        {
+          "magnitudeValue": 55,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-21T12:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -103.6,
+            15.4
+          ]
+        },
+        {
+          "magnitudeValue": 70,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-21T18:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -103,
+            15.2
+          ]
+        },
+        {
+          "magnitudeValue": 90,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-22T00:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -102.5,
+            15.1
+          ]
+        },
+        {
+          "magnitudeValue": 120,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-22T06:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -102,
+            14.7
+          ]
+        },
+        {
+          "magnitudeValue": 140,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-22T12:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -101.6,
+            14.7
+          ]
+        },
+        {
+          "magnitudeValue": 155,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-22T18:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -101.5,
+            14.6
+          ]
+        },
+        {
+          "magnitudeValue": 145,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-23T00:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -101.4,
+            14.6
+          ]
+        },
+        {
+          "magnitudeValue": 140,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-23T06:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -101.3,
+            14.8
+          ]
+        },
+        {
+          "magnitudeValue": 130,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-23T12:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -101.5,
+            15.2
+          ]
+        },
+        {
+          "magnitudeValue": 125,
+          "magnitudeUnit": "kts",
+          "date": "2026-09-23T18:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -102.1,
+            15.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EONET_23286",
+      "title": "Tropical Storm Julio",
+      "description": null,
+      "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_23286",
+      "closed": "2026-08-30T00:00:00Z",
+      "categories": [
+        {
+          "id": "severeStorms",
+          "title": "Severe Storms"
+        }
+      ],
+      "sources": [
+        {
+          "id": "JTWC",
+          "url": "https://www.metoc.navy.mil/jtwc/products/ep1026.tcw"
+        }
+      ],
+      "geometry": [
+        {
+          "magnitudeValue": 40,
+          "magnitudeUnit": "kts",
+          "date": "2026-08-25T06:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -119.9,
+            14.9
+          ]
+        },
+        {
+          "magnitudeValue": 45,
+          "magnitudeUnit": "kts",
+          "date": "2026-08-25T12:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -119.1,
+            17
+          ]
+        },
+        {
+          "magnitudeValue": 40,
+          "magnitudeUnit": "kts",
+          "date": "2026-08-25T18:00:00Z",
+          "type": "Point",
+          "coordinates": [
+            -118.8,
+            19.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EONET_24098",
+      "title": "Wildfire Fowl, Harding, New Mexico",
+      "description": null,
+      "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_24098",
+      "closed": null,
+      "categories": [
+        {
+          "id": "wildfires",
+          "title": "Wildfires"
+        }
+      ],
+      "sources": [
+        {
+          "id": "IRWIN",
+          "url": "https://irwin.doi.gov/observer/incidents/2026-NMN4S-000562"
+        }
+      ],
+      "geometry": [
+        {
+          "magnitudeValue": 822,
+          "magnitudeUnit": "acres",
+          "date": "2026-09-02T18:39:00Z",
+          "type": "Point",
+          "coordinates": [
+            -103.7858,
+            35.5693
+          ]
+        }
+      ]
+    }
+  ]
+}

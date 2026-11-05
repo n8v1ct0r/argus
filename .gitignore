@@ -1,0 +1,63 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# next.js / build
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# cesium static assets are copied at install time, never committed
+public/cesium/
+
+# env and secrets (commit .env.example only)
+.env
+.env.*
+!.env.example
+
+# local-only material: original brief, stealth term list, scratch data. Never tracked.
+.local/
+
+# local databases
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+data/
+
+# test and capture output
+test-results/
+playwright-report/
+blob-report/
+coverage/
+.lighthouse/
+
+# impeccable working files (config.json is committed; review captures and mocks are not)
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/config.local.json
+
+# os / editor
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# agent worktrees and local tool state (never scanned, linted, or committed)
+.claude/
+
+# vercel
+.vercel/
+.gstack/
+
+# The recorded snapshot for the static deploy (scripts/export-snapshot.ts). Generated data, about
+# 7 MB per export; the deploy uploads it from the working tree.
+public/snapshot/
+
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/

@@ -1,0 +1,13 @@
+.next
+node_modules
+public/cesium
+public/imagery
+data
+fixtures
+test-results
+playwright-report
+.local
+pnpm-lock.yaml
+next-env.d.ts
+docs/plan.md
+.claude

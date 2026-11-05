@@ -1,0 +1,412 @@
+{
+  "about": "Golden cases for the rule 4 checker (src/check). Each case cites one event whose facts are facts_texts. Non-ASCII characters are written as \\u escapes.",
+  "cases": [
+    {
+      "text": "An M4.6 quake struck 10 km NNE of Ridgecrest, CA.",
+      "facts_texts": ["4.6", "10 km NNE of Ridgecrest, CA"],
+      "expect_ok": true
+    },
+    {
+      "text": "A magnitude 4.6 quake struck at 21:55 UTC.",
+      "facts_texts": ["4.6", "21:55 UTC"],
+      "expect_ok": true
+    },
+    {
+      "text": "The M 4.6 quake led the list.",
+      "facts_texts": ["4.6"],
+      "expect_ok": true
+    },
+    {
+      "text": "M4.6 shaking hit Ridgecrest.",
+      "facts_texts": ["4.6"],
+      "expect_ok": true
+    },
+    {
+      "text": "A magnitude 4.6 quake struck near Ridgecrest.",
+      "facts_texts": ["4.63"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "A magnitude 4.60 quake struck near Ridgecrest.",
+      "facts_texts": ["4.6"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "Crews logged 7 quakes near the fault.",
+      "facts_texts": ["3", "4"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "Detections went from 118 to 241, up 104% day over day.",
+      "facts_texts": ["118", "241", "104"],
+      "expect_ok": true
+    },
+    {
+      "text": "Heat detections rose 104 percent day over day.",
+      "facts_texts": ["104%"],
+      "expect_ok": true
+    },
+    {
+      "text": "Heat detections rose 105% day over day.",
+      "facts_texts": ["104"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "The quake struck on 2026-09-22 at 21:55 UTC.",
+      "facts_texts": ["2026-09-22", "21:55 UTC"],
+      "expect_ok": true
+    },
+    {
+      "text": "The quake struck on 2026-09-23.",
+      "facts_texts": ["2026-09-22"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "The quake struck on Sep 22.",
+      "facts_texts": ["2026-09-22"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "The quake struck at 21:56 UTC.",
+      "facts_texts": ["21:55 UTC"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "The quake struck at 21:55:00 UTC.",
+      "facts_texts": ["21:55 UTC"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "Quakes struck between 21:55 UTC and 22:10 UTC.",
+      "facts_texts": ["21:55 UTC", "22:10 UTC"],
+      "expect_ok": true
+    },
+    {
+      "text": "The quake sat at a depth of -1.2 km.",
+      "facts_texts": ["-1.2"],
+      "expect_ok": true
+    },
+    {
+      "text": "The quake sat at a depth of \u22121.2 km.",
+      "facts_texts": ["-1.2"],
+      "expect_ok": true
+    },
+    {
+      "text": "The quake sat 1.2 km above sea level.",
+      "facts_texts": ["-1.2"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "The cell held 12,345 detections.",
+      "facts_texts": ["12345"],
+      "expect_ok": true
+    },
+    {
+      "text": "The cell held 12345 detections.",
+      "facts_texts": ["12,345"],
+      "expect_ok": true
+    },
+    {
+      "text": "The batch held 1,234,567.5 rows.",
+      "facts_texts": ["1234567.5"],
+      "expect_ok": true
+    },
+    {
+      "text": "The cell held 12,346 detections.",
+      "facts_texts": ["12,345"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "The depth was .5 km.",
+      "facts_texts": ["0.5"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "Aftershocks ranged from 3-5 km deep.",
+      "facts_texts": ["3", "5"],
+      "expect_ok": true
+    },
+    {
+      "text": "Heat detections rose in cell 38,-120.",
+      "facts_texts": ["38,-120"],
+      "expect_ok": true
+    },
+    {
+      "text": "Heat detections rose in cell 38,-121.",
+      "facts_texts": ["38,-120"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "NOAA-20 saw 241 detections.",
+      "facts_texts": ["NOAA-20", "241"],
+      "expect_ok": true
+    },
+    {
+      "text": "Detections by noaa-20 reached 241.",
+      "facts_texts": ["NOAA-20", "241"],
+      "expect_ok": true
+    },
+    {
+      "text": "NOAA-99 saw 241 detections.",
+      "facts_texts": ["NOAA-20", "241"],
+      "expect_ok": false,
+      "expect_kinds": ["alnum_not_in_facts"]
+    },
+    {
+      "text": "NOAA saw 20 detections.",
+      "facts_texts": ["NOAA-20"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "Event ci41234567 was revised.",
+      "facts_texts": ["ci41234567"],
+      "expect_ok": true
+    },
+    {
+      "text": "Event ci41234568 was revised.",
+      "facts_texts": ["ci41234567"],
+      "expect_ok": false,
+      "expect_kinds": ["alnum_not_in_facts"]
+    },
+    {
+      "text": "The M-4.6 reading stands.",
+      "facts_texts": ["4.6"],
+      "expect_ok": false,
+      "expect_kinds": ["alnum_not_in_facts"]
+    },
+    {
+      "text": "A 25-km radius held 7 quakes.",
+      "facts_texts": ["25", "7"],
+      "expect_ok": false,
+      "expect_kinds": ["alnum_not_in_facts"]
+    },
+    {
+      "text": "Heat detections rose 2x in the cell.",
+      "facts_texts": ["2"],
+      "expect_ok": false,
+      "expect_kinds": ["alnum_not_in_facts"]
+    },
+    {
+      "text": "Version 1790200000000 is live.",
+      "facts_texts": ["usgs:ci41234567@1790200000000"],
+      "expect_ok": false,
+      "expect_kinds": ["number_not_in_facts"]
+    },
+    {
+      "text": "Three quakes struck near the fault.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "Twenty-one quakes struck near the fault.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "The first quake struck at 21:55 UTC.",
+      "facts_texts": ["21:55 UTC"],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "The aircraft turned 3 degrees a second.",
+      "facts_texts": ["3"],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "Dozens of quakes struck near the fault.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "Quakes struck twice near the fault.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "Heat detections doubled in the cell.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "Heat detections tripled to 241.",
+      "facts_texts": ["241"],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "Heat detections halved to 118.",
+      "facts_texts": ["118"],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "About half of the cells were new.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "A pair of quakes struck at 21:55 UTC.",
+      "facts_texts": ["21:55 UTC"],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "Heat detections rose tenfold in the cell.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["number_word"]
+    },
+    {
+      "text": "Heat detections rose 10-fold in the cell.",
+      "facts_texts": ["10"],
+      "expect_ok": false,
+      "expect_kinds": ["alnum_not_in_facts", "number_word"]
+    },
+    {
+      "text": "An M\uFF14.\uFF16 quake struck near Ridgecrest.",
+      "facts_texts": ["4.6"],
+      "expect_ok": false,
+      "expect_kinds": ["non_ascii_digit"]
+    },
+    {
+      "text": "The cell covers 1 km\u00B2 of ground.",
+      "facts_texts": ["1"],
+      "expect_ok": false,
+      "expect_kinds": ["non_ascii_digit"]
+    },
+    {
+      "text": "A magnitude \u0664.\u0666 quake struck near Ridgecrest.",
+      "facts_texts": ["4.6"],
+      "expect_ok": false,
+      "expect_kinds": ["non_ascii_digit"]
+    },
+    {
+      "text": "Heat detections rose in \u00BD of the cells.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["non_ascii_digit"]
+    },
+    {
+      "text": "A magnitude 4.6 quake struck \u2014 near Ridgecrest.",
+      "facts_texts": ["4.6"],
+      "expect_ok": false,
+      "expect_kinds": ["dash"]
+    },
+    {
+      "text": "Quakes struck from 21:55\u201322:10 UTC.",
+      "facts_texts": ["21:55 UTC", "22:10 UTC"],
+      "expect_ok": false,
+      "expect_kinds": ["dash"]
+    },
+    {
+      "text": "A magnitude 4.6 quake struck \uFE58 near Ridgecrest.",
+      "facts_texts": ["4.6"],
+      "expect_ok": false,
+      "expect_kinds": ["dash"]
+    },
+    {
+      "text": "Quakes struck from 21:55\u201222:10 UTC.",
+      "facts_texts": ["21:55 UTC", "22:10 UTC"],
+      "expect_ok": false,
+      "expect_kinds": ["dash"]
+    },
+    {
+      "text": "The cluster is a pivotal signal.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["banned_word"]
+    },
+    {
+      "text": "The feed showcases 7 quakes.",
+      "facts_texts": ["7"],
+      "expect_ok": false,
+      "expect_kinds": ["banned_word"]
+    },
+    {
+      "text": "Crews leveraged 7 sensors.",
+      "facts_texts": ["7"],
+      "expect_ok": false,
+      "expect_kinds": ["banned_word"]
+    },
+    {
+      "text": "Analysts are delving into 7 quakes.",
+      "facts_texts": ["7"],
+      "expect_ok": false,
+      "expect_kinds": ["banned_word"]
+    },
+    {
+      "text": "The Robustness of the feed held.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["banned_word"]
+    },
+    {
+      "text": "The fire transformed the valley.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["banned_word"]
+    },
+    {
+      "text": "The feed is a lever\u00ADage point for 7 quakes.",
+      "facts_texts": ["7"],
+      "expect_ok": false,
+      "expect_kinds": ["banned_word"]
+    },
+    {
+      "text": "The cluster is a \uFF50\uFF49\uFF56\uFF4F\uFF54\uFF41\uFF4C signal.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["banned_word"]
+    },
+    {
+      "text": "The quake usgs:ci41234567@1790200000000 struck near Ridgecrest.",
+      "facts_texts": [],
+      "expect_ok": false,
+      "expect_kinds": ["id_in_text"]
+    },
+    {
+      "text": "The cluster (argus:quake-cluster:3f9a0c1d2e4b@1) held 7 quakes.",
+      "facts_texts": ["7"],
+      "expect_ok": false,
+      "expect_kinds": ["id_in_text"]
+    },
+    {
+      "text": "magnitude 4.6 shaking hit Ridgecrest.",
+      "facts_texts": ["4.6"],
+      "expect_ok": false,
+      "expect_kinds": ["not_capitalized"]
+    },
+    {
+      "text": "7 quakes struck near Ridgecrest.",
+      "facts_texts": ["7"],
+      "expect_ok": true
+    },
+    {
+      "text": "three quakes \u2014 a pivotal 7.9 event.",
+      "facts_texts": ["7"],
+      "expect_ok": false,
+      "expect_kinds": ["banned_word", "dash", "not_capitalized", "number_not_in_facts", "number_word"]
+    }
+  ]
+}

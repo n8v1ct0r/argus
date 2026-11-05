@@ -1,0 +1,17 @@
+# The static deploy uploads only what the build needs. Never upload local material, data, or env.
+/.local
+/.claude
+/.gstack
+.env*
+!.env.example
+/data
+/fixtures
+/test-results
+/playwright-report
+/.next
+node_modules
+/public/cesium
+*.db
+*.db-wal
+*.db-shm
+*.log

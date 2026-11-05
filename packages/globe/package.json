@@ -1,0 +1,21 @@
+{
+  "name": "@argus/globe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A framework-free CesiumJS globe with keyless NASA imagery, day and night shading, and typed layers. Knows nothing about the app that hosts it.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./react": "./src/react.tsx"
+  },
+  "peerDependencies": {
+    "cesium": "1.145.0",
+    "react": ">=19"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
+}
